@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -13,40 +14,44 @@ import com.example.thesmallticket.model.Utente;
 import com.example.thesmallticket.services.*;
 
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import com.example.thesmallticket.repositories.*;
 
 
 
 @RestController
-@RequestMapping("/api/utenti")
+@RequestMapping("/")
 public class UtenteController {
     @Autowired
-    private UtenteService utenteService;
+    UtenteService utenteService;
     @Autowired
-    private UtenteRepository utenteRepository;
+    UtenteRepository utenteRepository;
     
     @GetMapping
-    public String getAllUtenti(Model model){
-        List<Utente> listaUtenti = utenteRepository.findAll();
-        model.addAttribute("utente", listaUtenti);
-        return "utente";
+    public List<Utente> getAllUtenti(){
+        return utenteRepository.findAll();
     }
 
-    @GetMapping("/{id}")
-    public String getUtenteById(@PathVariable("id") Long id, Model model) {
-        Optional<Utente> utente = utenteService.findById(id);
-        if (utente.isPresent()) {
-            model.addAttribute("utente", utente);
-            return "utente";
-        }
-        return "redirect:/api/utenti" ;
-    }
+    // @GetMapping("/aggiungiUtente")
+    // public String formUtente(Model model) {
+    //     Utente utente = new Utente();
+    //     model.addAttribute("utente", utente);
+    //     return "aggiungiutente";
+    // }
 
-    @PostMapping("/aggiungiUtente")
-    public String creaUtente(Utente utente) {
-        utenteRepository.save(utente);
-        return "redirect:/${utente.}";
+
+    // @GetMapping("/{id}")
+    // public String getUtenteById(@PathVariable("id") Long id, Model model) {
+    //     Utente utente = utenteService.getUtenteById(id);
+    //     model.addAttribute("utente", utente);
+    //     return "utentesingolo";
+       
+    // }
+
+    @PostMapping()
+    public Utente creaUtente(@RequestBody Utente utente) {
+        return utenteRepository.save(utente);
     }
     
     
