@@ -15,19 +15,31 @@ public class UtenteService {
     @Autowired
     private UtenteRepository utenteRepository;
 
-    public List<Utente> findAll() {
-        return utenteRepository.findAll();
+    public Utente getUtenteById(Long id) {
+        Optional<Utente> optional = utenteRepository.findById(id);
+        Utente utente = new Utente();
+        if (optional.isPresent()) {
+            utente = optional.get();
+            return utente;
+        } else {
+            utente = null;
+            return utente;
+        }
     }
 
-    public Optional<Utente> findById(Long id) {
-        return utenteRepository.findById(id);
-    }
+    // public List<Utente> findAll() {
+    //     return utenteRepository.findAll();
+    // }
 
-    public Utente save(Utente utente) {
-        return utenteRepository.save(utente);
-    }
+    // public Optional<Utente> findById(Long id) {
+    //     return utenteRepository.findById(id);
+    // }
 
-    public void deleteById(Long id) {
-        utenteRepository.deleteById(id);
-    }
+    // public Utente save(Utente utente) {
+    //     return utenteRepository.save(utente);
+    // }
+
+    // public void deleteById(Long id) {
+    //     utenteRepository.deleteById(id);
+    // }
 }
