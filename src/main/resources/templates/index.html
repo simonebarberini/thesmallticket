@@ -1,13 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>THE BIG TICKET</title>
+  <link rel="stylesheet" type="text/css" th:href="@{/index.css}" />
 </head>
+
 <body>
-    <h1>HomePage</h1>
-    <a href="/utenti">vedi utenti</a>
-    <a href="/addUtentePage">aggiungi utenti</a>
+  <header>
+    <div class="title-header">
+      <h1>THE BIG TICKET</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#">PROFILO</a></li>
+        <li><a href="#">FILTRA PER DATA</a></li>
+        <li><a href="#">FILTRA PER CATEGORIA</a></li>
+      </ul>
+      <div class="nav-buttons">
+        <button class="button" onclick="window.location.href='/addEventoPage'">Aggiungi Evento</button>
+        <button class="button" onclick="window.location.href='/addUtentePage'">Aggiungi Utente</button>
+        <button class="button" onclick="window.location.href='/utenti'">Visualizza Utenti</button>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <div class="event-container">
+      <!-- Utilizzare Thymeleaf per iterare sulla lista degli eventi -->
+      <div th:each="evento : ${eventi}" class="event-card">
+        <div class="event-details">
+          <h2 th:text="${evento.nomeEvento}">Nome dell'Evento</h2>
+          <p class="category">Categoria: <span th:text="${evento.categoria}"></span></p>
+          <p class="date-time">Data: <span th:text="${evento.data}"></span></p>
+          <p class="location">Luogo: <span th:text="${evento.luogo}"></span></p>
+          <a href="#" class="buy-tickets">Prenota</a>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <p>&copy; 2024 THE BIG TICKET. All rights reserved.</p>
+  </footer>
 </body>
+
 </html>

@@ -39,6 +39,11 @@ public class UtenteController {
         return "index";
     }
 
+    @GetMapping("/home")
+    public String home2() {
+        return "index";
+    }
+
     @GetMapping("/getAllUtenti")
     public ResponseEntity<List<Utente>> getAllUtenti(){
         try {
@@ -121,11 +126,5 @@ public class UtenteController {
         utenteRepository.save(utente);
         return "redirect:/home";  // Redirect alla pagina che mostra tutti gli utenti
     }
-
-    // @GetMapping("/home")
-    // public String listaEventi(){
-    //     return "index";
-    // }
-
     
 }
