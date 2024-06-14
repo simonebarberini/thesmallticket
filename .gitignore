@@ -1,10 +1,20 @@
+### General ###
 HELP.md
+data.mv.db
+
+### Build Directories ###
 target/
-!.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
 
-### STS ###
+### Maven Wrapper ###
+!.mvn/wrapper/maven-wrapper.jar
+
+### IDE Specific ###
+# Spring Tool Suite (STS)
 .apt_generated
 .classpath
 .factorypath
@@ -13,21 +23,30 @@ target/
 .springBeans
 .sts4-cache
 
-### IntelliJ IDEA ###
+# IntelliJ IDEA
 .idea
 *.iws
 *.iml
 *.ipr
 
-### NetBeans ###
+# NetBeans
 /nbproject/private/
 /nbbuild/
 /dist/
 /nbdist/
 /.nb-gradle/
-build/
-!**/src/main/**/build/
-!**/src/test/**/build/
 
-### VS Code ###
+# VS Code
 .vscode/
+
+### Log Files ###
+*.log
+
+### Operating System Files ###
+.DS_Store
+Thumbs.db
+
+### Java ###
+*.class
+*.jar
+data.mv.db
