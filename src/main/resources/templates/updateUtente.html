@@ -9,19 +9,21 @@
 </head>
 
 <body>
-    <h1>Aggiornamento utente</h1>
-    <p th:text="'Stai aggiornando l\'utente: ' + ${utente.username}"></p>
-    <!-- Visualizza l'username dell'utente corrente -->
-    <form th:action="@{/updateUtente/{id}(id=${utente.idUtente})}" th:object="${utente}" method="post">
-        <label for="username">Nome:</label>
-        <input type="text" id="username" th:field="*{username}" required>
-        <br>
-        <label for="email">Email:</label>
-        <input type="email" id="email" th:field="*{email}" required>
-        <br>
-        <button type="submit">Salva</button>
-        <a href="/utenti">Annulla</a>
-    </form>
+    <div class="container">
+        <h1>Aggiornamento utente</h1>
+        <p th:text="'Stai aggiornando l\'utente: ' + ${utente.username}">Stai aggiornando l'utente: </p>
+        <!-- Visualizza l'username dell'utente corrente -->
+        <form th:action="@{/updateUtente/{id}(id=${utente.idUtente})}" th:object="${utente}" method="post">
+            <label for="username">Nome:</label>
+            <input type="text" id="username" th:field="*{username}" required>
+            <br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" th:field="*{email}" required>
+            <br>
+            <button type="submit">Salva</button>
+            <a href="/utenti">Annulla</a>
+        </form>
+    </div>
 </body>
 
 </html>
