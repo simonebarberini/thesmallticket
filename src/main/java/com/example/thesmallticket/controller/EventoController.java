@@ -48,7 +48,7 @@ public class EventoController {
     }
 
     @GetMapping("/eventi")
-    public String getUsers(Model model) {
+    public String getEventi(Model model) {
         // Ottieni la lista degli utenti dal servizio
         List<Evento> eventi = eventoRepository.findAll();
 
@@ -112,7 +112,7 @@ public class EventoController {
     @PostMapping("/saveEvento")
     public String saveEvento(@ModelAttribute Evento evento) {
         eventoRepository.save(evento);
-        return "redirect:/home"; // Redirect alla pagina che mostra tutti gli utenti
+        return "redirect:/eventi"; // Redirect alla pagina che mostra tutti gli utenti
     }
 
     // @GetMapping("/home")
