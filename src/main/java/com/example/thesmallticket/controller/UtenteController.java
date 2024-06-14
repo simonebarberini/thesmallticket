@@ -25,15 +25,15 @@ public class UtenteController {
     @Autowired
     UtenteRepository utenteRepository;
 
-    @GetMapping("/")
-    public String home() {
-        return "index";
-    }
+    // @GetMapping("/eventi")
+    // public String home() {
+    //     return "index";
+    // }
 
-    @GetMapping("/home")
-    public String home2() {
-        return "index";
-    }
+    // @GetMapping("/home")
+    // public String home2() {
+    //     return "index";
+    // }
 
     @GetMapping("/getAllUtenti")
     public ResponseEntity<List<Utente>> getAllUtenti() {
@@ -99,7 +99,7 @@ public class UtenteController {
     @PostMapping("/saveUtente")
     public String saveUtente(@ModelAttribute Utente utente) {
         utenteRepository.save(utente);
-        return "redirect:/home"; // Redirect alla pagina che mostra tutti gli utenti
+        return "redirect:/eventi"; // Redirect alla pagina che mostra tutti gli utenti
     }
 
     @PostMapping("/updateUtenteById/{id}")
