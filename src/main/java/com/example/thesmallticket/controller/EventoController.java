@@ -56,7 +56,7 @@ public class EventoController {
         model.addAttribute("eventi", eventi);
 
         // Restituisci il nome del template Thymeleaf (senza l'estensione .html)
-        return "eventiList";
+        return "index2";
     }
 
     @GetMapping("/getEventoById/{id}")
@@ -115,9 +115,9 @@ public class EventoController {
         return "redirect:/home"; // Redirect alla pagina che mostra tutti gli utenti
     }
 
-    @GetMapping("/home")
-    public String listaEventi() {
-        return "index";
-    }
+    // @GetMapping("/home")
+    // public String listaEventi() {
+    //     return "index2";
+    // }
 
 }

@@ -1,179 +1,150 @@
-<!-- COLORI
-MIDNIGHT BLUE
-PANTONE: PMS 289 C
-HEX COLOR: #0C2340;
-RGB: rgb(12, 35, 64)
-CMYK: (100, 76, 12, 70)
-
-LAKE BLUE
-PANTONE: PMS 647 C
-HEX COLOR: #236192;
-RGB: rgb(35, 97, 146)
-CMYK: (96, 54, 5, 27)
-
-MOONLIGHT GREY
-PANTONE: PMS 422 C
-HEX COLOR: #9EA2A2;
-RGB: rgb(158, 162, 162)
-CMYK: (19, 12, 13, 34)
-
-AURORA GREEN
-PANTONE: PMS 368 C
-HEX COLOR: #78BE20;
-RGB: rgb(120, 190, 32)
-CMYK: (65, 0, 100, 0)
-
-WHITE
-HEX COLOR: #FFFFFF;
-RGB: rgb(255, 255, 255)
-CMYK: (0, 0, 0, 0) -->
-
 <!DOCTYPE html>
 <html lang="it">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>THE BIG TICKET</title>
-    <style>
-      * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
-body {
-  background-color: rgb(12, 35, 64);
-  font-family: cursive;
-}
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>THE BIG TICKET</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-footer {
-  background-color: rgb(35, 97, 146);
-}
+    body {
+      background-color: rgb(12, 35, 64);
+      font-family: cursive;
+    }
 
-.title-header {
-  padding: 50px;
-  display: flex;
-  justify-content: center;
-  color: rgb(120, 190, 32);
-}
+    footer {
+      background-color: rgb(35, 97, 146);
+    }
 
-.event-card {
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  width: 400px;
-  margin: 20px;
-  transition: transform 0.7s ease;
-}
+    .title-header {
+      padding: 50px;
+      display: flex;
+      justify-content: center;
+      color: rgb(120, 190, 32);
+    }
 
-.event-card:hover {
-  transform: scale(1.1);
-}
+    .event-card {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      width: 400px;
+      margin: 20px;
+      transition: transform 0.7s ease;
+    }
 
-.event-image img {
-  width: 100%;
-  height: auto;
-}
+    .event-card:hover {
+      transform: scale(1.1);
+    }
 
-.event-details {
-  padding: 20px;
-}
+    .event-image img {
+      width: 100%;
+      height: auto;
+    }
 
-.event-details h2 {
-  margin-top: 0;
-  font-size: 24px;
-  color: #333;
-}
+    .event-details {
+      padding: 20px;
+    }
 
-.event-details .date-time,
-.event-details .location,
-.event-details .category,
-.event-details .created {
-  font-size: 14px;
-  color: #666;
-  margin: 5px 0;
-}
+    .event-details h2 {
+      margin-top: 0;
+      font-size: 24px;
+      color: #333;
+    }
 
-.event-details .description {
-  font-size: 16px;
-  color: #555;
-  margin: 10px 0;
-}
+    .event-details .date-time,
+    .event-details .location,
+    .event-details .category,
+    .event-details .created {
+      font-size: 14px;
+      color: #666;
+      margin: 5px 0;
+    }
 
-.buy-tickets {
-  display: inline-block;
-  padding: 10px 20px;
-  margin-top: 10px;
-  background-color:rgb(120, 190, 32);
-  color: #fff;
-  text-decoration: none;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-}
+    .event-details .description {
+      font-size: 16px;
+      color: #555;
+      margin: 10px 0;
+    }
 
-.buy-tickets:hover {
-  background-color: rgb(87, 139, 24);
-}
+    .buy-tickets {
+      display: inline-block;
+      padding: 10px 20px;
+      margin-top: 10px;
+      background-color: rgb(120, 190, 32);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
 
-nav{
-    height: 80px;
-    display: flex;
-    justify-content: end;
-    align-items: center;
-    background-color: rgb(35, 97, 146);
-    border: 2px solid rgb(255, 255, 255);
-    margin-bottom: 200px;
-}
+    .buy-tickets:hover {
+      background-color: rgb(87, 139, 24);
+    }
 
-ul{
-    margin-right: 20px;
-    display: flex;
-    list-style-type: none;
-}
+    nav {
+      height: 80px;
+      display: flex;
+      justify-content: end;
+      align-items: center;
+      background-color: rgb(35, 97, 146);
+      border: 2px solid rgb(255, 255, 255);
+      margin-bottom: 200px;
+    }
 
-li{
-    padding: 10px;
-    font-weight: bold;
-    transition: transform 0.7s ease;
-}
+    ul {
+      margin-right: 20px;
+      display: flex;
+      list-style-type: none;
+    }
 
-li:hover{
-    transform: scale(1.1);
-}
+    li {
+      padding: 10px;
+      font-weight: bold;
+      transition: transform 0.7s ease;
+    }
 
-a{
-    text-decoration: none;
-    color: rgb(120, 190, 32);
-}
-    </style>
-  </head>
-  <body>
-    <header>
-      <div class="title-header">
-        <h1>THE BIG TICKET</h1>
+    li:hover {
+      transform: scale(1.1);
+    }
+
+    a {
+      text-decoration: none;
+      color: rgb(120, 190, 32);
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="title-header">
+      <h1>THE BIG TICKET</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="">PROFILO</a></li>
+        <li><a href="">FILTRA PER DATA</a></li>
+        <li><a href="">FILTRA PER CATEGORIA</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main id="eventi-container">
+    <!-- Utilizzare Thymeleaf per iterare sulla lista degli eventi -->
+    <div th:each="evento : ${eventi}" class="event-card">
+      <div class="event-details">
+        <h2 th:text="${evento.nomeEvento}">Nome dell'Evento</h2>
+        <p class="category">Categoria: <span th:text="${evento.categoria}"></span></p>
+        <p class="date-time">Data: <span th:text="${evento.data}"></span></p>
+        <p class="location">Luogo: <span th:text="${evento.luogo}"></span></p>
+        <a href="#" class="buy-tickets">Prenota</a>
       </div>
-      <nav>
-        <ul>
-            <li><a href="">PROFILO</a></li>
-            <li><a href="">FILTRA PER DATA</a></li>
-            <li><a href="">FILTRA PER CATEGORIA</a></li>
-        </ul>
-      </nav>
-    </header>
-    <main>
-      <div class="event-card">
-        <div class="event-details">
-          <h2>Nome dell'Evento</h2>
-          <p class="category" text="${evento.categoria}">Categoria: </p>
-          <p class="date-time" text="${evento.data}">Data: </p>
-          <p class="location" text="${evento.luogo}">Luogo: </p>
-          <!-- <p class="created">Creato da: Creatore</p>
-          <p class="description">Descrizione dell'evento</p> -->
+    </div>
+  </main>
+</body>
 
-          <a href="#" class="buy-tickets">Prenota</a>
-        </div>
-      </div>
-    </main>
-  </body>
 </html>
