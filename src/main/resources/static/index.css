@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0C233F;
+    font-family: 'Arial', sans-serif;
+    color: #FFF;
+}
+
+header {
+    margin-bottom: 20px;
+}
+
+.title-header {
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    background-color: #235F92;
+    color: #78BE20;
+}
+
+nav {
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #235F92;
+    border-bottom: 2px solid #FFF;
+    padding: 0 20px;
+}
+
+ul {
+    display: flex;
+    list-style-type: none;
+}
+
+li {
+    margin: 0 15px;
+    padding: 10px;
+    font-weight: bold;
+    transition: transform 0.7s ease;
+}
+
+li:hover {
+    transform: scale(1.1);
+}
+
+a {
+    text-decoration: none;
+    color: #78BE20;
+}
+
+a:hover {
+    color: #A4D354;
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.button {
+    background-color: #78BE20;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #A4D354;
+}
+
+.event-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0 20px;
+}
+
+.event-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    width: 300px;
+    margin: 15px;
+    transition: transform 0.7s ease;
+}
+
+.event-card:hover {
+    transform: scale(1.05);
+}
+
+.event-details {
+    padding: 20px;
+    color: #333;
+}
+
+.event-details h2 {
+    margin-top: 0;
+    font-size: 20px;
+    color: #235F92;
+}
+
+.event-details p {
+    font-size: 14px;
+    color: #666;
+    margin: 5px 0;
+}
+
+.buy-tickets {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #78BE20;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.buy-tickets:hover {
+    background-color: #A4D354;
+}
+
+footer {
+    background-color: #235F92;
+    padding: 10px;
+    text-align: center;
+    color: #FFF;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

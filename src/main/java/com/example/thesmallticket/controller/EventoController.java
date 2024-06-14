@@ -56,7 +56,7 @@ public class EventoController {
         model.addAttribute("eventi", eventi);
 
         // Restituisci il nome del template Thymeleaf (senza l'estensione .html)
-        return "index2";
+        return "index";
     }
 
     @GetMapping("/getEventoById/{id}")
