@@ -7,11 +7,14 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+// import org.springframework.web.bind.annotation.RequestMapping;
+// import org.springframework.web.bind.annotation.RestController;
 import com.example.thesmallticket.model.Utente;
 // import com.example.thesmallticket.services.*;
 
@@ -22,8 +25,7 @@ import com.example.thesmallticket.repositories.*;
 
 
 
-@RestController
-@RequestMapping("/")
+@Controller
 public class UtenteController {
     // @Autowired
     // UtenteService utenteService;
@@ -59,7 +61,7 @@ public class UtenteController {
     }
     
     @PostMapping("/addUtente")
-    public ResponseEntity<Utente> addBook(@RequestBody Utente utente){
+    public ResponseEntity<Utente> addUtente(@RequestBody Utente utente){
         Utente utenteObj = utenteRepository.save(utente);
 
         return new ResponseEntity<>(utenteObj, HttpStatus.OK);
@@ -84,6 +86,21 @@ public class UtenteController {
     public ResponseEntity<Object> deleteUtenteById(@PathVariable Long id){
         utenteRepository.deleteById(id);
         return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    
+    //endpoint per visualizzare la pagina HTML per aggiungere un utente
+    @GetMapping("/addUtentePage")
+    public String addUtentePage(Utente utente, Model model) {
+        model.addAttribute("utente", utente);
+        return "addUtente";
+    }
+
+    //endpoint per gestire l'invio del form HTML
+    @PostMapping("/saveUtente")
+    public String saveUtente(@ModelAttribute Utente utente, Model model) {
+        utenteRepository.save(utente);
+        return "redirect:/getAllUtenti";  // Redirect alla pagina che mostra tutti gli utenti
     }
 
     
