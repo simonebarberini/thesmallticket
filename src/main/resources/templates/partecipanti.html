@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Partecipanti</title>
+    <style>
+        /* Aggiungi i tuoi stili qui */
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Partecipanti</h1>
+    </header>
+    <main>
+        <ul>
+            <li th:each="partecipazione : ${partecipazioni}">
+                <span th:text="${partecipazione.utente.nome}">Nome Utente</span> - <span
+                    th:text="${partecipazione.utente.email}">Email</span>
+            </li>
+        </ul>
+        <a th:href="@{/eventi}">Torna agli eventi</a>
+    </main>
+</body>
+
+</html>

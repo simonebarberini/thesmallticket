@@ -106,6 +106,7 @@ public class UtenteController {
         }
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
+    
     @DeleteMapping("/deleUtenteById/{id}")
     public ResponseEntity<Object> deleteUtenteById(@PathVariable Long id){
         utenteRepository.deleteById(id);
