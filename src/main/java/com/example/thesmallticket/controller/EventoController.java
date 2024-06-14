@@ -31,6 +31,11 @@ public class EventoController {
     @Autowired
     EventoRepository eventoRepository;
 
+    @GetMapping("/")
+    public String redirectToEventi() {
+        return "redirect:/eventi";
+    }
+
     @GetMapping("/getAllEventi")
     public ResponseEntity<List<Evento>> getAllUtenti() {
         try {
