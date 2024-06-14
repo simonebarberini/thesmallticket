@@ -47,6 +47,18 @@ public class UtenteController {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+
+    @GetMapping("/utenti")
+    public String getUsers(Model model) {
+        // Ottieni la lista degli utenti dal servizio
+        List<Utente> utenti = utenteRepository.findAll();
+
+        // Aggiungi la lista degli utenti al modello
+        model.addAttribute("utenti", utenti);
+
+        // Restituisci il nome del template Thymeleaf (senza l'estensione .html)
+        return "userList";
+    }
     
     @GetMapping("/getUtenteById/{id}")
     public ResponseEntity<Utente> getUtenteById(@PathVariable Long id){
@@ -98,9 +110,14 @@ public class UtenteController {
 
     //endpoint per gestire l'invio del form HTML
     @PostMapping("/saveUtente")
-    public String saveUtente(@ModelAttribute Utente utente, Model model) {
+    public String saveUtente(@ModelAttribute Utente utente) {
         utenteRepository.save(utente);
-        return "redirect:/getAllUtenti";  // Redirect alla pagina che mostra tutti gli utenti
+        return "redirect:/home";  // Redirect alla pagina che mostra tutti gli utenti
+    }
+
+    @GetMapping("/home")
+    public String listaEventi(){
+        return "index";
     }
 
     
