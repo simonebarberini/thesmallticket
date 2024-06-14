@@ -2,20 +2,28 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aggiungi Utente</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/addUtente.css}" />
 </head>
 
 <body>
     <h1>Aggiungi Nuovo Utente</h1>
-    <form th:action="@{/saveUtente}" th:object="${utente}" method="post">
-        <label>Username:</label>
-        <input type="text" th:field="*{username}" /><br />
-        <label>Password:</label>
-        <input type="password" th:field="*{password}" /><br />
-        <label>Email:</label>
-        <input type="email" th:field="*{email}" /><br />
-        <button type="submit">Salva</button>
-    </form>
+    <div class="container">
+        <form th:action="@{/saveUtente}" th:object="${utente}" method="post">
+            <label>Username:</label>
+            <input type="text" th:field="*{username}" /><br />
+            <label>Password:</label>
+            <input type="password" th:field="*{password}" /><br />
+            <label>Email:</label>
+            <input type="email" th:field="*{email}" /><br />
+            <button type="submit">Salva</button>
+        </form>
+        <div class="link-container">
+            <a href="/home">Torna alla home</a>
+        </div>
+    </div>
 </body>
 
 </html>

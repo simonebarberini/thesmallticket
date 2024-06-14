@@ -25,12 +25,19 @@ import com.example.thesmallticket.repositories.*;
 
 
 
+
+
 @Controller
 public class UtenteController {
     // @Autowired
     // UtenteService utenteService;
     @Autowired
     UtenteRepository utenteRepository;
+
+    @GetMapping("/")
+    public String home() {
+        return "index";
+    }
 
     @GetMapping("/getAllUtenti")
     public ResponseEntity<List<Utente>> getAllUtenti(){
