@@ -6,9 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista Utenti</title>
     <link rel="stylesheet" type="text/css" th:href="@{/userList.css}" />
-    <style>
-
-    </style>
 </head>
 
 <body>
@@ -19,6 +16,7 @@
                 <th>ID</th>
                 <th>Nome</th>
                 <th>Email</th>
+                <th>Azioni</th>
             </tr>
         </thead>
         <tbody>
@@ -26,10 +24,36 @@
                 <td th:text="${user.idUtente}">1</td>
                 <td th:text="${user.username}">Nome</td>
                 <td th:text="${user.email}">email@example.com</td>
+                <td>
+                    <button class="delete-btn" th:attr="data-user-id=${user.idUtente}"
+                        onclick="deleteUser(this)">Elimina</button>
+                    <button class="update-btn"
+                        th:attr="onclick='location.href=\'/updateUtentePage/' + ${user.idUtente} + '\''">Aggiorna</button>
+                </td>
             </tr>
         </tbody>
     </table>
     <a href="/home">Torna alla home</a>
+
+    <script>
+        function deleteUser(button) {
+            const userId = button.getAttribute('data-user-id');
+            if (confirm('Sei sicuro di voler eliminare questo utente?')) {
+                fetch(`/deleteUtenteById/${userId}`, {
+                    method: 'DELETE'
+                })
+                    .then(response => {
+                        if (response.ok) {
+                            alert('Utente eliminato con successo');
+                            location.reload();
+                        } else {
+                            alert('Errore durante l\'eliminazione dell\'utente');
+                        }
+                    })
+                    .catch(error => console.error('Errore:', error));
+            }
+        }
+    </script>
 </body>
 
 </html>
