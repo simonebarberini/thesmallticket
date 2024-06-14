@@ -24,10 +24,10 @@ public class Utente {
     public void setIdUtente(Long idUtente) {
         this.idUtente = idUtente;
     }
-    public String getusername() {
+    public String getUsername() {
         return username;
     }
-    public void setusername(String username) {
+    public void setUsername(String username) {
         this.username = username;
     }
     public String getPassword() {
@@ -53,6 +53,11 @@ public class Utente {
     }
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString();
     }
 
 }
