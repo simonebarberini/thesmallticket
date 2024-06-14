@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aggiungi Utente</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/addEvento.css}" />
+</head>
+
+<body>
+    <h1>Aggiungi Nuovo Evento</h1>
+    <div class="container">
+        <form th:action="@{/saveEvento}" th:object="${evento}" method="post">
+            <label>Nome:</label>
+            <input type="text" th:field="*{nomeEvento}" /><br />
+            <label>Luogo:</label>
+            <input type="text" th:field="*{luogo}" /><br />
+            <label>Data:</label>
+            <input type="date" th:field="*{data}" /><br />
+            <label>Categoria:</label>
+            <input type="text" th:field="*{categoria}" /><br />
+            <button type="submit">Salva</button>
+        </form>
+        <div class="link-container">
+            <a href="/eventi">Torna alla home</a>
+        </div>
+    </div>
+</body>
+
+</html>
