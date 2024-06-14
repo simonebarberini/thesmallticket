@@ -115,9 +115,9 @@ public class EventoController {
         return "redirect:/home"; // Redirect alla pagina che mostra tutti gli utenti
     }
 
-    // @GetMapping("/home")
-    // public String listaEventi() {
-    //     return "index2";
-    // }
+    @GetMapping("/home")
+    public String listaEventi() {
+        return "index";
+    }
 
 }
